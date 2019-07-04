@@ -1,0 +1,244 @@
+﻿<!doctype html>
+<html lang="en">
+
+<head>
+    <title>practice 01</title>
+    
+    <link rel="stylesheet" href="practice01_css.css">
+</head>
+
+<body>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- Bootstrap CSS -->
+
+<!-- Modal -->
+    <div class="black-background" id="modal">
+        <div class="white-background">
+            <h4 id="title">당장 입력하세요!</h4>
+            <!-- <form action = "login.php" method = "" onsubmit="return false"> -->
+            <form id = 'form' action = '#'>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Email address</label>
+                    <input type="text" class="form-control" id='email' placeholder="Enter email">
+                    <small id="emailHelp" class="text_Infor">your email is empty!</small>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Password</label>
+                    <input type="password" class="form-control" id='password' placeholder="Password">
+                    <small id="passHelp" class="text_Infor">your password is empty!</small>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="button" class="btn btn-primary" id='close'>close</button>
+            </form>
+        </div>
+    </div>
+<!-- Modal -->
+    
+    
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">FrontCoffe</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">About <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Menu</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Event</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="jumbotron background-img">
+        <h1 class="display-4">환영합니다!.</h1>
+        <p class="lead">우리 사이트에 방문해주셔서 감사합니다.
+            Thank you for visiting our site.</p>
+        <hr class="my-4">
+        <a class="btn btn-primary btn-lg" href="#" role="button" id='login' onclick="change_modal_title_text('please login')";>Login</a>
+        <a class="btn btn-primary btn-lg" href="#" role="button" onclick="change_modal_title_text('please SignUp')";>SignUp</a>
+    </div>
+
+
+
+</body>
+<script>
+//복습1. Log in 모달창 열기 기능을 만들어봅시다. 모달 HTML은 위에 준비되어있습니다. 배웠던 함수를 사용하면 조금 더 깔끔한 개발이 가능합니다.
+    document.getElementById('login').addEventListener('click',function(){
+        
+        document.getElementById('modal').style.display='block';
+    });
+//복습2. IE9이상에서 즐겨 사용한다는 addEventListener()를 이용해서 모달창 닫기버튼의 기능을 개발해봅시다.
+    document.getElementById('close').addEventListener('click',function(){
+        
+        document.getElementById('modal').style.display='none';
+        
+    });
+//복습3. 아까만든 모달창 여는 함수 업그레이드하기 : 로그인, 회원가입 버튼을 누를 때마다 각각 다른 제목을 가진 모달창을 띄워보세요. 
+    function change_modal_title_text( text )
+    {
+            //1. 모달창 띄우기
+            document.getElementById('modal').style.display = 'block';
+            //2. 제목에 '가입하세요'라고 바꾸기
+            document.getElementById('title').innerHTML = text;
+    }  
+//복습4. 법카결제() 기능을 약간만 다르게 만들어보도록 합시다. 오늘 점심값이 6천원 이상이면 거절, 미만이면 승인을 출력해주면 되는데..... 이번엔 법카결제() 함수를 
+//1. 점심값을 함수에 input으로 입력하면 
+//2. 승인 혹은 거절을 '콘솔창'에 출력해주는 함수로 만들어보도록 합시다. (수업시간 예제와는 약간 달라요)
+    //(에시) 법카결제(10000) 이라고 쓰면 콘솔창에 '거절'이 출력되어야하고, 법카결제(4000)이라고 쓰면 콘솔창에 '승인'이 출력되어야합니다. 
+    /*function 법카결제() 
+    {
+				//빨리 여기에 코드 짜세요
+	}*/
+    function decide( input )
+    {
+        if( input >= 6000 )
+        {
+            console.log('결제 거부( false )');
+        }
+        else
+        {
+            console.log('결제 승인( true )');
+        }
+    }
+//숙제1. 이메일뿐만 아니라 비밀번호 입력란도 공백검사를 해주는 기능을 더해주도록 합시다. 복습4에서 만든 코드를 어떻게 업그레이드 해야할까요?
+//숙제2. 이메일 혹은 비밀번호 입력란이 공란이면
+//input태그 아래에 '여기 이상해요'라고 표시해주는 게 훨씬 유저 친화적이겠쥬?그러니 빨리 만들어봅시다. 
+//이메일이 공란일 시 전송버튼을 누르면 이메일 쓰라는 안내 메세지를 폼 아래에 띄워보는 일종의 UI 기능을 추가해봅시다. 
+//숙제3. 이메일 공백검사만으로는 부족합니다. 
+//"지금 입력한 값이 이메일형식이 맞는지" 검사하는 기능을 추가해봅니다.
+//이메일이 공백이거나 이메일 형식이 아니면 똑같이 안내문을 띄워주도록 합니다.
+// (이메일 정규식에 관한 내용 당연히 검색필요)
+//ㆍ숙제 겸 예습4. 수업시간처럼 이쁜함수()를 만들어서
+// <form onsubmit="">에 집어넣지말고! 요즘사용한다는 그 addEventListener를 이용해 다시 한번 공백체크 기능을 만들어보세요. 
+//(팁) 당연히 모르는 내용은 구글에 물어보실 수 있습니다.
+   document.getElementById('form').addEventListener('submit',function(){
+       
+    //email password을 가지고옴
+    const email = document.getElementById('email').value;
+    const pass = document.getElementById('password').value;
+    
+    var email_sucess = Boolean(false);
+    var pass_sucess = Boolean(false);
+
+    //reg
+    var reg = /^[A-Za-z0-9_\.\-]+@[A-Za-z0-9\-]+\.[A-Za-z0-9\-]+/;
+       
+    //혹시 이메일이 공백인가요?
+    if( email === '' )
+    {
+        document.getElementById('emailHelp').innerHTML = 'your email empty!';
+        document.getElementById('emailHelp').style.display = 'block';
+        console.log('이메일 공백');
+        email_sucess = false;
+    }
+    //공백은 아닌데 형식이 올바르지않습니다.
+    else if( !reg.test( email ) )
+    {
+        document.getElementById('emailHelp').innerHTML = 'email format is invalid!.';
+        console.log('공백은 아닌데 형식이 틀림');
+        email_sucess = false;
+    }
+    else
+    {
+        email_sucess = true;
+    }
+
+    //패스워드가 공백인가요?
+    if( pass === '' )
+    {
+        document.getElementById('passHelp').style.display = 'block';
+        console.log('패스워드 공백');
+        pass_sucess = false;
+    }
+    else
+    {
+        document.getElementById('passHelp').style.display = 'none';
+        pass_sucess = true;
+    }
+       
+    //모두 검사해보니
+    if( email_sucess && pass_sucess )
+    {
+        console.log('전송 성공');
+        return true;
+    }
+    else
+    {
+        console.log('전송 실패');
+        return false;
+    }   
+   });   
+  
+  //코멘트 : email_success랑 pass_success가 false인 경우, 전송하지않기 위해 return false라고 쓰셨는데 폼은 정상적으로 전송이되고 있습니다. 왜냐면.. return false라는 건 false값을 퉤 뱉어내라는 뜻이지 폼 전송을 막으라는 뜻은 아니기 때문입니다. addEventListener('submit', function(){}) 안에서 폼 전송을 막으려면 다른 방법이 필요합니다. 2주차에 배우긴 할건데 event object 어쩌구를 찾아보시면 되겠습니다. 
+  
+  
+  
+    //3 6 9 game
+//ㆍ코딩테스트 스타일 
+//숙제5. 철수는 뉴 369게임 자바스크립트 봇을 만들려고 합니다. 
+//(여기서의 369게임은 '3의 배수에서' 박수를 치면 게임입니다) 
+//어떤 숫자를 집어넣으면 박수를 쳐야할 지 말아야할 지 판단해주는 함수를 만들려고 합니다.	
+//어떻게 함수를 만들어야할까요?
+		//function 게임봇() {
+			//함수를 디자인해봅시다.
+
+		//}
+//(결과 예시)
+//게임봇(12); 함수에 12를 입력하면 콘솔창에 "박수"라는 글자가 나와야합니다.
+//게임봇(5); 함수에 5를 입력하면 콘솔창에 "통과"라는 글자가 나와야합니다.
+//(팁) 자바스크립트엔 +- 말고도 % 라는 연산자가 있습니다. 용도는 안알랴줌 
+    function three_six_nineGame( number )
+    {
+        var result = number % 3;
+        if( result === 0 )
+        {
+             //3의 배수면 박수
+            console.log( '박수-짝!' );
+        }
+        else
+        {
+            //아니라면 통과 출력
+            console.log( '통과-' );
+        }	 
+    }
+//ㆍ코딩테스트 스타일 숙제6. 
+//근데 요즘 인싸들은 369게임 업그레이드 버전을 한다고 합니다. 
+//일단 3의 배수에서 박수를 치는건 맞는데, 현재 숫자가 9의 배수이기도 할 경우엔 
+//박수를 두번쳐야합니다. 그럼 숙제4에서 만들었던 게임봇 함수를 어떻게 업그레이드 하면 될까요?
+//(예시)
+//게임봇(3); 함수에 3을 입력하면 콘솔창에 "박수"라는 글자가 나와야합니다.
+//게임봇(5); 함수에 5를 입력하면 콘솔창에 "통과"라는 글자가 나와야합니다.
+//게임봇(18); 함수에 18을 입력하면 콘솔창에 "박수x2"라는 글자가 나와야합니다.    
+    function three_six_nineGame_upgrade( number )
+    {      
+        var three = number % 3;
+        var nine = number % 9;
+        if( three === 0)
+        {
+            if( nine === 0 )
+            {
+                console.log('박수-짝! * 2');
+                return; 
+            }
+            console.log('박수-짝!' );
+        }
+        else
+        {
+            console.log('통과-');
+        }
+    }
+</script>    
+    
+    
+</html>
