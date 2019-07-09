@@ -26,7 +26,7 @@
                     <input type="email" id="email" class="form-control" placeholder="Enter email">
                 </div>
                 <div class="form-group mb-4">
-                    <input type="password" class="form-control" placeholder="Password">
+                    <input type="phone number" class="form-control" placeholder="phone Number">
                 </div>
                 <button type="submit" class="btn btn-primary">제출</button>
                 <button class="btn btn-danger" id="close">닫기</button>
@@ -83,8 +83,8 @@
         <h1 class="display-4" style="color: cadetblue">개발자 페이지</h1>
         <p class="lead" style="color: cadetblue">안 승현 개발자 페이지 입니다.</p>
         <hr class="my-4">
-        <h3 style="color: cadetblue">010-5671-3767</h3>
-        <a class="btn btn-primary btn-lg" onclick="모달창띄워라('로그인')" href="#" role="button">로그인하기</a>
+        <h3 style="color: rgb(12, 11, 11)">010-5671-3767</h3>
+        <a class="btn btn-primary btn-lg" onclick="모달창띄워라('이메일 주소 입력')" href="#" role="button">do you want connect ?</a>
         <a class="btn btn-primary btn-lg" onclick="가입창띄워라('가입하기')" href="#" role="button">가입하기</a>
     </div>
 
@@ -92,6 +92,7 @@
         //       1.긴 코드 하나로 축약
         function 모달창띄워라(a) {
             document.getElementById('modal').style.display = 'block';
+            document.getElementById('title').innerHTML = a;
         }
 
         function 가입창띄워라(a) {

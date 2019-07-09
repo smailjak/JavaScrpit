@@ -1,0 +1,281 @@
+<!doctype html>
+<html lang="en">
+  <head>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+	<link rel="stylesheet" href="main.css">
+
+	<title>Hello, world!</title>
+</head>
+
+<body>
+
+	<div class="black-background" id="modal">
+		<div class="white-background">
+			<h4 id="title">당장 로그인하세요</h4>
+			<form action="login.php" onsubmit="return 이쁜함수()">
+				<div class="form-group mt-4">
+					<input type="email" id="email" class="form-control" placeholder="Enter email">
+				</div>
+				<div class="form-group mb-4">
+					<input type="password" class="form-control" placeholder="Password">
+				</div>
+				<button type="submit" class="btn btn-primary">Submit</button>
+				<button class="btn btn-danger" id="close">닫기</button>
+			</form>
+		</div>
+	</div>
+
+
+	<script>
+		
+		document.querySelector('#modal').addEventListener('click',function(e){
+			
+			e.target;   //실제 누른거 
+			e.currentTarget;   //이벤트가 달린곳(동작하는곳), 일명 this
+			this;  
+			e.preventDefault();  //기본동작막기 
+			e.stopPropagation();  //이벤트 버블링 중단 
+			
+		  //지금 진짜 누른게 검은배경일 때만 닫아라  
+			
+			console.log(e.target);
+			
+			if ( e.target == document.querySelector('.black-background') ){
+				document.getElementById('modal').style.display = 'none';
+			}
+			
+		});
+		
+		
+		function 이쁜함수() {
+
+			if (document.getElementById("email").value == "") {
+				return false
+
+			} else {
+				return true
+			}
+
+		}
+
+		document.getElementById('close').addEventListener('click', function() {
+
+			document.getElementById('modal').style.display = 'none'
+
+		});
+	</script>
+
+
+	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+		<a class="navbar-brand" href="#">DressShop</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+		<div class="collapse navbar-collapse" id="navbarNav">
+			<ul class="navbar-nav">
+				<li class="nav-item active">
+					<a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">Features</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">Pricing</a>
+				</li>
+			</ul>
+		</div>
+	</nav>
+
+
+	<div class="jumbotron main-background">
+		<h1 class="display-4">30% Season OFF</h1>
+		<p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+		<hr class="my-4">
+		<p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+		<a class="btn btn-primary btn-lg" onclick="모달창띄워라()" href="#" role="button">Log In</a>
+		<a class="btn btn-primary btn-lg" onclick="가입창띄워라('가입하기')" href="#" role="button">Sign Up</a>
+	</div>
+
+
+	<script>
+		//1. 긴코드 하나로 축약
+		function 모달창띄워라() {
+			document.getElementById('modal').style.display = 'block';
+		}
+
+		function 가입창띄워라(a) {
+			//1. 모달창 열기 
+			document.getElementById('modal').style.display = 'block';
+			//2. 제목을 '가입하세요'라고 바꾸기
+			document.getElementById('title').innerHTML = a;
+		}
+
+
+		//2. 뭔가 집어넣으면 뭔가 뱉어냄 (블랙박스/깔때기?)
+		function 더하기(a) {
+			1 + a;
+		}
+
+		//3. 퉤 
+		function 더하기(a) {
+			return 1 + a
+		}
+
+		//
+		//		var 오늘점심값 = 4000;
+		//		
+		//		function 법카결제(){
+		//			//return '승인'
+		//			
+		//			//음 오늘점심값이 6000이하일 경우
+		//			if (오늘점심값 < 6000) {
+		//				return '승인'
+		//			} else {
+		//				return '거절'
+		//			}
+		//		}
+		//		
+
+
+
+		//		const 나이 = 20;
+
+
+		//		if ( 3 == 3 && 2 == 2 ){
+		//			조건식이 참일 경우 실행할 코드  
+		//		} else {
+		//			참이 아닐 경우 
+		//		}
+		//		
+		//
+	</script>
+
+
+	<div class="container">
+		<div class="row">
+			<div class="col-md-4">
+				<div class="card">
+					<img src="img/pic1.jpg" class="card-img-top">
+					<div class="card-body">
+						<h5 class="card-title" id="title1">Card title</h5>
+						<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+						<a href="#" class="btn btn-primary">Go somewhere</a>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div class="card">
+					<img src="img/pic2.jpg" class="card-img-top">
+					<div class="card-body">
+						<h5 class="card-title">Card title</h5>
+						<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+						<a href="#" class="btn btn-primary">Go somewhere</a>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div class="card">
+					<img src="img/pic3.jpg" class="card-img-top">
+					<div class="card-body">
+						<h5 class="card-title">Card title</h5>
+						<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+						<a href="#" class="btn btn-primary">Go somewhere</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<h4 id="car">차3에 저장된 car1의 차브랜드명</h4>
+	<h4>차 모델명</h4>
+
+	<script>
+		var 차3 = {
+			car1: ['BMW', 520, 'white'],
+			car2: ['Kia', 'Morning', 'black']
+		}
+		document.getElementById('car').innerHTML = 차3.car1[0];
+
+  
+		var products = [{
+				id: 1,
+				price: 299,
+				img: 'img/pic1.jpg',
+				title: 'Blossom Dress',
+				text: "Do you like some random yellow stuff? Here's one for you."
+			},
+			{
+				id: 2,
+				price: 199,
+				img: 'img/pic1.jpg',
+				title: 'Springfield Shirt',
+				text: "Stole it from my dad."
+			},
+			{
+				id: 3,
+				price: 399,
+				img: 'img/pic3.jpg',
+				title: 'Black Monastery',
+				text: "The best beer comes from the monastery."
+			}
+		];
+		
+		//  [ {}, {}, {} ]
+		
+		products.sort(function(a,b){
+			return a.price - b.price
+		});
+		
+		
+		document.getElementById('title1').innerHTML = products[0].title;
+		
+//		document.getElementsByClassName('card-text')[1].innerHTML = ??;
+//		document.querySelector('.card-text');
+//		document.querySelectorAll('.card-text')[0].innerHTML = ??;
+//		document.querySelectorAll('.card-text')[1].innerHTML = ??;
+		
+		
+		var 어레이 = [5, 2, 10, 3, 4];
+		어레이.sort(function(a,b){
+			return b - a
+		});
+		
+		var 필터한어레이 = 어레이.filter(function(a){
+			return a < 4
+		});
+		
+		var 매핑한어레이 = 어레이.map(function(a){
+			return a * 1170
+		})
+		
+		어레이.pop();
+		
+		
+//		오브젝트.brand;
+//		오브젝트['brand'];
+		
+
+		var 차 = ['BMW', 520, 'white']; //Array 
+		차[0];
+
+		var 차2 = { //Object 자료형 : 이름붙임 
+			brand: 'BMW',
+			model: 520
+		}
+		차2.brand;
+	</script>
+
+
+	<!-- Optional JavaScript -->
+	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>
