@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="main.css">
+
+    <title>Hello, world!</title>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">DressShop</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Features</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Pricing</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+
+    <div class="text-center my-4">
+        <h4>Detail</h4>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <img src="img/pic1.jpg" width="100%">
+            </div>
+            <div class="col-md-6 mt-5">
+                <h5>Blossom Dress</h5>
+                <p>이 드레스는 동대문에서 태그갈이한 상품입니다.</p>
+                <p>$199</p>
+                <form>
+                    <div class="form-row">
+                        <div class="col">
+                            <input type="text" class="form-control" value="1" id="number">
+                        </div>
+                        <div class="col">
+                            <select class="form-control" id="color">
+                                <option>White</option>
+                                <option>Red</option>
+                                <option>Green</option>
+                            </select>
+                        </div>
+                        <div class="col">
+                            <select class="form-control" id="size">
+                                <option>Large</option>
+                                <option>Medium</option>
+                                <option>Small</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-danger my-4" id="add">장바구니추가</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+    <style>
+        .list {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .tab-button {
+            display: block;
+            padding: 10px 20px 10px 20px;
+            float: left;
+            margin-right: -1px;
+            margin-bottom: -1px;
+            color: grey;
+            text-decoration: none;
+        }
+
+        .active {
+            border-top: 2px solid orange;
+            border-right: 1px solid #ccc;
+            border-bottom: 1px solid white;
+            border-left: 1px solid #ccc;
+            color: black;
+            margin-top: -2px;
+        }
+
+        .tab-content {
+            display: none;
+            padding: 10px;
+        }
+
+        .show {
+            display: block;
+        }
+    </style>
+
+    <br>
+    <!--active라는 클래스는 버튼 하이라이트해주는 클래스, show는 탭 내용 보여주는 클래스-->
+    <div class="container mt-5" style="margin-bottom: 500px;">
+        <ul class="list">
+            <li><a class="tab-button" data-id="0">Products</a></li>
+            <li><a class="tab-button" data-id="1">Information</a></li>
+            <li><a class="tab-button" data-id="2">Shipping</a></li>
+            <li><a class="tab-button" data-id="3">추가탭1</a></li>
+            <li><a class="tab-button" data-id="4">추가탭2</a></li>
+            <li><a class="tab-button active" data-id="5">추가탭3</a></li>
+            <div style="clear:both;"></div>
+        </ul>
+
+        <div class="tab-content">
+            <p>상품설명입니다. Product</p>
+        </div>
+        <div class="tab-content">
+            <p>상품정보입니다. Information</p>
+        </div>
+        <div class="tab-content">
+            <p>배송정보입니다. Shipping</p>
+        </div>
+        <div class="tab-content">
+            <p>추가정보 1</p>
+        </div>
+        <div class="tab-content">
+            <p>추가정보 2</p>
+        </div>
+        <div class="tab-content show">
+            <p>추가정보 3</p>
+        </div>
+    </div>
+
+    <!--<script src="tab.js"></script>-->
+
+
+    <br><br>복습4. detail.html의 탭기능을 직접 처음부터 한번 만들어봅시다. tab.js에 이미 답이 나와있기 때문에 tab.js 보지 말고 detail.html하단에 스크립트태그 열어서 직접 짜보시면 되겠습니다. 우선 한글로 설명부터 적어봅시다.
+
+    <script>
+        /* var tab_list = document.querySelectorAll(".tab-button");
+ var tab_content = document.querySelectorAll(".tab-content");
+
+ document.querySelectorAll(".tab-button")[0].addEventListener("click", function() {
+ tab_list.forEach(function(item, index) {
+ item.classList.remove("active");
+ });
+ tab_content.forEach(function(item, index) {
+ item.classList.remove("show");
+ });
+
+ this.classList.add("active");
+ tab_content[0].classList.add("show");
+ });*/
+    </script>
+
+
+
+    <br><br>시간 남으면 해보면 좋을 예습1. addEventListener 갯수를 줄이면 장점이 많습니다. detail.html에서 탭기능을 다시 만들어보는데, 이번엔 addEventListener를 탭 HTML레이아웃내의 ul 이라는 태그에 딱 하나만 부착해서 만들어봅시다.
+
+    <br>(힌트) 이번주에 배운 이벤트 버블링과 이벤트 함수를 잘 이용해야합니당.
+
+    <script>
+        var tab_list = document.querySelectorAll(".tab-button");
+        var tab_content = document.querySelectorAll(".tab-content");
+
+        document.querySelector(".list").addEventListener("click", function(e) {
+            var class_name = e.target.getAttribute("class");
+            if (class_name == "tab-button") {
+                var select_index = e.target.getAttribute("data-id");
+
+                tab_list.forEach(function(item, index) {
+                    item.classList.remove("active");
+                });
+                tab_content.forEach(function(item, index) {
+                    item.classList.remove("show");
+                });
+
+                tab_list[select_index].classList.add("active");
+                tab_content[select_index].classList.add("show");
+
+            }
+
+        });
+    </script>
+
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body></html>

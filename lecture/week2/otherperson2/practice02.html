@@ -1,0 +1,158 @@
+﻿<!doctype html>
+<html lang="en">
+
+<head>
+    <title>practice 02</title>
+</head>
+
+<body>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- Bootstrap CSS -->
+
+<!-- Modal -->
+    <div class="black-background" id="modal">
+        <div class="white-background">
+            <h4 id="title">당장 입력하세요!</h4>
+            <!-- <form action = "login.php" method = "" onsubmit="return false"> -->
+            <form id = 'form' action = 'login.php'>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Email address</label>
+                    <input type="text" class="form-control" id='email' placeholder="Enter email">
+                    <small id="emailHelp" class="text_Infor">your email is empty!</small>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Password</label>
+                    <input type="password" class="form-control" id='password' placeholder="Password">
+                    <small id="passHelp" class="text_Infor">your password is empty!</small>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="button" class="btn btn-primary" id='close'>close</button>
+            </form>
+        </div>
+    </div>
+<!-- Modal -->
+    
+    
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">FrontCoffe</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">About <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Menu</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Event</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="jumbotron background-img">
+        <h1 class="display-4">환영합니다!.</h1>
+        <p class="lead">우리 사이트에 방문해주셔서 감사합니다.
+            Thank you for visiting our site.</p>
+        <hr class="my-4">
+        <a class="btn btn-primary btn-lg" href="#" role="button" id='login' onclick="change_modal_title_text('please login')";>Login</a>
+        <a class="btn btn-primary btn-lg" href="#" role="button" onclick="change_modal_title_text('please SignUp')";>SignUp</a>
+    </div>
+
+  <h3>가격정렬</h3>
+  <div class = 'price selector' >
+    <label><input type='radio' class = 'radio' value = 'min' name='optradio' checked>최저가</label>
+    <label><input type='radio' class = 'radio' value = 'max' name='optradio'>최고가</label>
+    <label><input type='radio' class = 'radio' value = 'alphabet' name='optradio'>alphabet</label>
+  </div> 
+    
+
+    
+<div class='container'>
+    <div class='row'>
+        <div class='col-md-4'>
+            <div class="card">
+                <img src="img/product/img1.jpg" class="card-img-top">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <h6 class="card-price">$ product price</h6>
+                    <p class="card-text" id='product1_contents'>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+            </div>
+        </div>
+        <div class='col-md-4'>
+            <div class="card">
+                <img src="img/product/img2.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <h6 class="card-price">$ product price</h6>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+            </div>
+        </div>
+        <div class='col-md-4'>
+            <div class="card">
+                <img src="img/product/KakaoTalk_20190707_101350530.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <h6 class="card-price">$ product price</h6>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+            </div>
+        </div>
+        <div class='col-md-4'>
+            <div class="card">
+                <img src="img/product/img1.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <h6 class="card-price">$ product price</h6>
+                    <p class="card-text" id='product1_contents'>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+            </div>
+        </div>
+        <div class='col-md-4'>
+            <div class="card">
+                <img src="img/product/img1.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <h6 class="card-price">$ product price</h6>
+                    <p class="card-text" id='product1_contents'>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+            </div>
+        </div>
+        <div class='col-md-4'>
+            <div class="card">
+                <img src="img/product/img1.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <h6 class="card-price">$ product price</h6>
+                    <p class="card-text" id='product1_contents'>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+            </div>
+        </div>
+        <div class='col-md-12'><h1>$200 미만의 제품</h1></div>
+    </div>
+
+    <link rel="stylesheet" href="practice01_css.css">
+    <script src='week01.js'></script>
+    <script src='week01_HW.js'></script>
+    </div>
+</body>
+
+    
+
+</html>
