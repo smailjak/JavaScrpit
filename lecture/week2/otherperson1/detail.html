@@ -112,18 +112,18 @@
         .show {
             display: block;
         }
+
     </style>
 
     <br>
     <!--active라는 클래스는 버튼 하이라이트해주는 클래스, show는 탭 내용 보여주는 클래스-->
+    <!--    data-id="0" 를 쓰는 이유는 ??? -->
     <div class="container mt-5" style="margin-bottom: 500px;">
         <ul class="list">
             <li><a class="tab-button" data-id="0">Products</a></li>
+            <!--            document.getelementbyid('??').dataset.id // 0 이렇게 자바스크립트를 이용해서 불러오면 된다. -->
             <li><a class="tab-button" data-id="1">Information</a></li>
             <li><a class="tab-button" data-id="2">Shipping</a></li>
-            <li><a class="tab-button" data-id="3">추가탭1</a></li>
-            <li><a class="tab-button" data-id="4">추가탭2</a></li>
-            <li><a class="tab-button active" data-id="5">추가탭3</a></li>
             <div style="clear:both;"></div>
         </ul>
 
@@ -167,6 +167,7 @@
  this.classList.add("active");
  tab_content[0].classList.add("show");
  });*/
+
     </script>
 
 
@@ -197,6 +198,7 @@
             }
 
         });
+
     </script>
 
 
@@ -204,7 +206,74 @@
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
+    <h4 id="text">
+        안녕하세요.
+    </h4>
+    <h4 class="text">안녕하세요2</h4>
+    <h4 class="text">안녕하세요3</h4>
+    <button id="button">버튼</button>
+    <script>
+        //       document.querySelectorAll('.text')[0].innerHTML='';
+        //       document.querySelectorAll('.text')[1].innerHTML='';
+        //       document.querySelectorAll('.text')[2].innerHTML='';
+        //       이렇게 길어지는 자바스크립트  용어가 밑에 처럼 한꺼번에 선택을 해서 바꿀수가 있다.
+
+        //       $('.text').html('바보');
+
+        $('#button').on('click', function() { // click 이 아니라 mouseover 로 해보자 . 
+            //        $('#text').text();
+            //        $('text').text('바보');
+            //        $('text').attr('src','pic1.jpg'); .attr 은 바꿔준다.
+            //        $('.text').animate({marginLeft : '100px'});
+            $('.text').slideUp();
+        });
+
+        //        localStorage.setItem('name', 'john'); // set은 저장
+        //        localStorage.getItem('name'); // get 은 가져오는것 
+        //        localStorage.removeItem('name'); // removeItem 은 삭제
+
+//        product1 | {
+//            "name": "Blossom",
+//            "number": "10",
+//            "color": "white"
+//        }
+
+        //        1. 장바구니 추가 버튼을 누르면... 0
+        //        2. 사용자가 입력한 제품명 , 수량 , 사이즈 , 칼라 정보를 가져와서 
+        //        3. 이쁜 object 자료형을 만든다음에 
+        //        4. 텍스트로 바꾼 뒤에 
+        //        5. localStorage 에 product1이라는 이름으로 저장 
+
+        var 오브젝트 = {
+            age: 20
+        }
+        var 제이슨 = JSON.stringify(오브젝트);
+
+        JSON.parse(제이슨);
+
+        $('#add').click(function() {
+
+
+            var 오브젝트 = {
+                name: "Blossom",
+                number: 100, //$('number').val(); 100 대신에 $('number').val(); 를 넣어도 상관이 없다. 
+                size: 'Medium',
+                color: 'White'
+            }
+
+            오브젝트.number = $('number').val(); //            document.getElementById('number').value; 은 자바스크립트 방식 
+            var product1 = JSON.stringify(오브젝트);
+            //            product1 대신에 JSON.stringify(오브젝트);를 넣어줘도 된다.
+            localStorage.setItem('product1', product1);
+        });
+
+    </script>
+
+
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-</body></html>
+</body>
+
+</html>

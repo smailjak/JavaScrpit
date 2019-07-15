@@ -1,19 +1,35 @@
 var 탭버튼 = document.querySelectorAll('.tab-button');
 var 탭내용 = document.querySelectorAll('.tab-content');
 
-for (let i = 0; i < 3; i++ ){
-	
-	탭버튼[i].addEventListener('click',function(){
-		탭버튼[0].classList.remove('active');
+//for (let i = 0; i < 3; i++ ){
+//	
+//	탭버튼[i].addEventListener('click',function(){
+//        탭주황색칠하기(i);
+//        탭내용보여주기(i);
+//		
+//	});
+//}
+
+document.querySelector('ul.list').addEventListener('click',function(e){
+//   지금누른게 버튼0이면.. 탭주황색칠하기(0) ; 탭내용보여주기(0);
+    
+    탭주황색칠하기(e.target.dataset.id);
+    탭내용보여주기(e.target.dataset.id);
+    
+});
+
+function 탭주황색칠하기(a){
+    탭버튼[0].classList.remove('active');
 		탭버튼[1].classList.remove('active');
 		탭버튼[2].classList.remove('active');
-		탭버튼[i].classList.add('active');
+		탭버튼[a].classList.add('active');
+}
 
-		탭내용[0].classList.remove('show');
+function 탭내용보여주기(a){
+    탭내용[0].classList.remove('show');
 		탭내용[1].classList.remove('show');
 		탭내용[2].classList.remove('show');
 		탭내용[i].classList.add('show');
-	});
 }
 
 for (var i = 0; i < 3; i++ ){

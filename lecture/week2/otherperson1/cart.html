@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="main.css">
+
+    <title>Hello, world!</title>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">DressShop</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Features</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Pricing</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+
+    <div class="text-center my-4">
+        <h4>Detail</h4>
+    </div>
+
+    <table class="table">
+        <thead class="thead-light">
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Product</th>
+                <th scope="col">Last</th>
+                <th scope="col">Size</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">1</th>
+                <td>Mark</td>
+                <td>Otto</td>
+                <td>@mdo</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    <script>
+        var 제이슨 = localStorage.getItem('product1');
+        var 오브젝트 = JSON.parse(제이슨);
+
+        var template = `<tr>
+                <th scope="row">1</th>
+                <td>${오브젝트.name}</td>
+                <td>Otto</td>
+                <td>@mdo</td></tr>`;
+
+        $('tbody').append(template);
+
+
+
+        var tracer = {
+            q: ‘Pulsebomb’,
+            e: ‘Recall’,
+            sayHi: function() {
+                console.log(‘Hello’)
+            }
+        }
+
+        var hanzo = {
+            q: ‘DragonStrike’,
+            e: ‘ScatterArrow’,
+            sayHi: function() {
+                console.log(‘Hello’)
+            }
+        }
+
+        // this = Hero 로 부터 새로생성될 오브젝트 애들 instance 
+        function Hero(a) {
+            this.q = a;
+            this.e = 'Recall';
+            this.r = '궁극기';
+            this.sayHi = function() {
+                console.log('Hello')
+            }
+        }
+
+
+        Hero.prototype.r = '궁극기';
+        //        Hero.prototype.r = '궁극기'; 이렇게 하면 prototype 이 유전자 이니깐 . 부모의 유전자에 r 속성을 집어 넣게 된다. 
+        //        내가 물려받을 prototype 을 설정할 수 있다. 
+
+        var tracer = new Hero(); // 케릭터 하나 생성
+        var hanzo = new Hero('뭐하기');
+
+        var 어레이[2, 3, 4, 5, 6];
+        var 어레이 = new Array(2, 3, 4, 5, 6);
+
+        어레이.sort(); //sort 란 무엇인가 ?? 일단은 부모가 가지고 있기 때문에 사용할 수 있는것인데 .. 상속을 받아서 쓸 수 있음  
+        어레이.map();
+
+        Array.prototype.뒤섞이 = function() {
+            //여기다가 내용을 입력 
+        }
+
+        뒤섞이();
+
+    </script>
+</body>
+
+</html>
