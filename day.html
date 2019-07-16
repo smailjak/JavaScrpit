@@ -1,36 +1,49 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
-<meta charset="UTF-8">
-<link rel="stylesheet" href="//code.jquery.com/ui/1.8.18/themes/base/jquery-ui.css" />
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-<script src="//code.jquery.com/ui/1.8.18/jquery-ui.min.js"></script>
-<style>
-/*datepicer 버튼 롤오버 시 손가락 모양 표시*/
-.ui-datepicker-trigger{cursor: pointer;}
-/*datepicer input 롤오버 시 손가락 모양 표시*/
-.hasDatepicker{cursor: pointer;}
-</style>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="main.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 , user-scalable=no">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <style>
+        /*datepicer 버튼 롤오버 시 손가락 모양 표시*/
+        .ui-datepicker-trigger {
+            cursor: pointer;
+        }
+
+        /*datepicer input 롤오버 시 손가락 모양 표시*/
+        .hasDatepicker {
+            cursor: pointer;
+        }
+    </style>
+
 </head>
+
 <body>
-  생년월일: <input type="text" id="datepicker1">
-<script>
-$(function() {
-  $( "#datepicker1" ).datepicker({
-    dateFormat: 'yy.mm.dd',
-    prevText: '이전 달',
-    nextText: '다음 달',
-    monthNames: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'],
-    monthNamesShort: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'],
-    dayNames: ['일','월','화','수','목','금','토'],
-    dayNamesShort: ['일','월','화','수','목','금','토'],
-    dayNamesMin: ['일','월','화','수','목','금','토'],
-    showMonthAfterYear: true,
-    changeMonth: true,
-    changeYear: true,
-    yearSuffix: '년'
-  });
-});
-</script>
+    <input type="input" id="month" placeholder="생년월일">
+    <script>
+        $(function() {
+            $("#month").click(function(){
+                $("#month").datepicker({
+                    dateFormat: 'yy.mm.dd',
+                    prevText: '이전 달',
+                    nextText: '다음 달',
+                    monthNames: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'],
+                    monthNamesShort: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'],
+                    dayNames: ['일', '월', '화', '수', '목', '금', '토'],
+                    dayNamesShort: ['일', '월', '화', '수', '목', '금', '토'],
+                    dayNamesMin: ['일', '월', '화', '수', '목', '금', '토'],
+                    showMonthAfterYear: true,
+                    changeMonth: true,
+                    changeYear: true,
+                    yearSuffix: '년'
+                });
+            });
+        });
+    </script>
 </body>
+
 </html>
